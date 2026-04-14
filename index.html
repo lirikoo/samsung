@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung - Línea Blanca Premium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "SamsungOne", "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #000;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Card de Producto */
+        .product-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .product-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .model-code {
+            font-size: 11px;
+            color: #888;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            min-height: 50px;
+        }
+
+        /* Especificaciones */
+        .specs-box {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .spec-item {
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .spec-label {
+            color: #777;
+        }
+
+        .spec-value {
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">SAMSUNG</div>
+    <div style="font-size: 14px; font-weight: 600; color: #555;">Lavandería</div>
+</header>
+
+<div class="container">
+    
+    <div class="product-card">
+        <span class="model-code">MODELO: WW80-PURE-WHITE</span>
+        <img src="https://images.samsung.com/is/image/samsung/p6pim/latin/ww80ta046ax-bo/gallery/latin-washer-ww5000t-ww80ta046ax-bo-424074219?$650_519_PNG$" alt="Samsung 8kg Blanca">
+        <h2 class="product-title">Lavadora Frontal 8Kg Slim White Edition</h2>
+        <div class="specs-box">
+            <div class="spec-item">
+                <span class="spec-label">Capacidad:</span>
+                <span class="spec-value">8 Kilogramos</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Tecnología:</span>
+                <span class="spec-value">Hygiene Steam</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Dimensiones:</span>
+                <span class="spec-value">600 x 850 x 450 mm</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <span class="model-code">MODELO: WD12-GIANT-WHT</span>
+        <img src="https://images.samsung.com/is/image/samsung/p6pim/latin/wd12t754dbn-bo/gallery/latin-combo-wd7000t-395152-wd12t754dbn-bo-532938814?$650_519_PNG$" alt="Samsung 12kg Blanca">
+        <h2 class="product-title">Lavadora 12Kg Inteligente con AI Control</h2>
+        <div class="specs-box">
+            <div class="spec-item">
+                <span class="spec-label">Capacidad:</span>
+                <span class="spec-value">12 Kilogramos</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Motor:</span>
+                <span class="spec-value">Digital Inverter Pro</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Conexión:</span>
+                <span class="spec-value">Wi-Fi / SmartThings</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
