@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo MAVIK - Lavadora Samsung</title>
+    <title>Catálogo MAVIK - Refrigerador</title>
     <style>
-        /* Estilos Base - Minimalistas y Claros */
+        /* Estilos Base */
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f0f4f8; /* Fondo claro y suave */
+            background-color: #f0f4f8;
             margin: 0;
             padding: 0;
             color: #333;
@@ -25,18 +25,18 @@
         
         .header-mavik h1 {
             margin: 0;
-            color: #2c3e50; /* Azul oscuro elegante */
+            color: #2c3e50;
             font-size: 1.6rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
         
         .header-mavik span {
-            color: #3498db; /* Azul brillante para MAVIK */
+            color: #3498db;
             font-weight: 900;
         }
 
-        /* Contenedor del Producto (Tarjeta Blanca) */
+        /* Contenedor del Producto */
         .product-container {
             max-width: 800px;
             margin: 0 auto 30px auto;
@@ -45,13 +45,13 @@
             padding: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             display: flex;
-            flex-direction: column; /* Apilado en celular */
+            flex-direction: column; /* Celular por defecto */
             gap: 20px;
-            width: 90%; /* Deja un pequeño margen en los bordes del celular */
+            width: 90%;
             box-sizing: border-box;
         }
 
-        /* Zona de la Imagen */
+        /* Zona de la Imagen (Ajustada para Refrigerador) */
         .product-image {
             text-align: center;
             padding: 15px;
@@ -62,7 +62,7 @@
         .product-image img {
             max-width: 100%;
             height: auto;
-            max-height: 280px; /* Tamaño ideal para móvil */
+            max-height: 400px; /* Un poco más alto para refrigeradores */
             object-fit: contain;
         }
 
@@ -89,7 +89,7 @@
 
         /* Lista de Características */
         .features-list {
-            list-style: none; /* Quita los puntos por defecto */
+            list-style: none;
             padding: 0;
             margin: 0 0 20px 0;
         }
@@ -103,7 +103,7 @@
             font-size: 0.95rem;
             color: #444;
             display: flex;
-            flex-direction: column; /* En celular el título de la característica va arriba */
+            flex-direction: column;
         }
         
         .features-list li strong {
@@ -136,7 +136,7 @@
             border-radius: 10px;
             font-weight: bold;
             font-size: 1.1rem;
-            display: block; /* Ocupa todo el ancho en celular */
+            display: block;
             text-align: center;
             transition: background 0.3s;
         }
@@ -145,10 +145,10 @@
             background-color: #2980b9;
         }
 
-        /* ADAPTACIÓN PARA COMPUTADORA */
+        /* Adaptación para PC */
         @media (min-width: 768px) {
             .product-container {
-                flex-direction: row; /* Imagen a un lado, texto al otro */
+                flex-direction: row;
                 padding: 30px;
                 gap: 40px;
             }
@@ -162,12 +162,13 @@
                 flex: 1.2;
             }
             .features-list li {
-                flex-direction: row; /* En PC se ve en una sola línea */
+                flex-direction: row;
                 align-items: center;
             }
             .features-list li strong {
                 margin-bottom: 0;
                 margin-right: 10px;
+                min-width: 120px; /* Alinea los textos en PC */
             }
             .price-section {
                 text-align: left;
@@ -194,22 +195,24 @@
     <main class="product-container">
         
         <div class="product-image">
-            <img src="https://via.placeholder.com/300x350?text=Lavadora+Samsung" alt="Lavadora Samsung EcoBubble">
+            <img src="https://via.placeholder.com/300x450?text=Refrigerador+Inox" alt="Refrigerador Acero Inoxidable">
         </div>
 
         <div class="product-details">
-            <span class="product-brand">Samsung</span>
-            <h2 class="product-title">Lavadora Carga Frontal WF20T</h2>
+            <span class="product-brand">Refrigeración</span>
+            <h2 class="product-title">Refrigerador Acero Inoxidable</h2>
 
             <ul class="features-list">
-                <li><strong>Capacidad</strong> 12 KG</li>
-                <li><strong>Tecnología</strong> Sistema EcoBubble™</li>
-                <li><strong>Motor</strong> Digital Inverter</li>
-                <li><strong>Color</strong> Blanco</li>
+                <li><strong>Capacidad</strong> 275 litros</li>
+                <li><strong>Sistema</strong> Semi seco</li>
+                <li><strong>Refrigeración</strong> Radiador interno</li>
+                <li><strong>Compresor</strong> Motor gas ecológico R600a</li>
+                <li><strong>Extras</strong> Dispensador de agua (2 litros)</li>
+                <li><strong>Acabado</strong> Acero inoxidable</li>
             </ul>
 
             <div class="price-section">
-                <div class="price">Bs. 3,200</div>
+                <div class="price">Bs. 2,950</div>
                 <a href="#" class="btn-action">Ver detalles</a>
             </div>
         </div>
