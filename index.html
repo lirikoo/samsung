@@ -5,41 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promoción Lavadora - Molineros</title>
     <style>
-        /* Estilos Generales */
+        /* Estilos Generales - Optimizados para lectura */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f8; /* Fondo claro general */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f8;
             margin: 0;
-            padding: 40px 20px;
+            padding: 15px; /* Menos padding en celular */
             display: flex;
             justify-content: center;
         }
 
-        /* Contenedor Principal (Tarjeta Blanca) */
+        /* Tarjeta Principal */
         .promo-card {
             background-color: #ffffff;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 900px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             width: 100%;
-            padding: 40px;
+            max-width: 900px;
+            padding: 25px 20px; /* Padding cómodo para celular */
             box-sizing: border-box;
-            position: relative;
-            overflow: hidden;
         }
 
-        /* Cabecera */
+        /* Cabecera (Header) */
         .header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column; /* Apilado en celular */
             align-items: center;
-            margin-bottom: 40px;
+            text-align: center;
+            gap: 15px;
             border-bottom: 2px solid #f0f0f0;
             padding-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .promo-title {
-            font-size: 2rem;
+            font-size: 1.8rem; /* Tamaño ajustado para móvil */
             font-weight: 900;
             line-height: 1.1;
             text-transform: uppercase;
@@ -51,62 +51,106 @@
             padding: 5px 15px;
             border-radius: 5px;
             display: inline-block;
-            margin-bottom: 5px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
             transform: rotate(-2deg);
         }
 
         .promo-title .rojo { color: #da291c; }
-        .promo-title .amarillo { color: #f2a900; font-size: 2.5rem;}
-
-        .logo-container {
-            text-align: right;
-        }
+        .promo-title .amarillo { color: #f2a900; font-size: 2.2rem;}
 
         .logo-container h2 {
             color: #da291c;
             margin: 0;
-            font-size: 1.8rem;
-            letter-spacing: 2px;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
         }
 
         .logo-container p {
             margin: 0;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #666;
         }
 
-        /* Contenido Principal a dos columnas */
+        /* Contenedor Principal (Flex) */
         .main-content {
             display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
+            flex-direction: column; /* En celular, todo va en una sola columna vertical */
+            gap: 30px;
         }
 
-        /* Columna Izquierda: Información */
+        /* Columna de Imagen (Arriba en móviles) */
+        .image-col {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .product-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 350px; /* Evita que la imagen sea gigante en móviles */
+            object-fit: contain;
+        }
+
+        /* Etiqueta de Capacidad (12 KG) */
+        .capacity-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #da291c;
+            color: white;
+            padding: 12px 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 1.1;
+            box-shadow: 0 4px 10px rgba(218, 41, 28, 0.3);
+        }
+
+        /* Columna de Información (Abajo en móviles) */
         .info-col {
-            flex: 1;
-            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            text-align: center; /* Centrado para mejor lectura en celular */
         }
 
         .brand {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             margin: 0 0 5px 0;
+            color: #111;
         }
 
         .sku {
             color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
         }
 
         .product-name {
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1.3rem;
+            font-weight: 800;
             color: #333;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        /* Nuevo estilo para EcoBubble */
+        .ecobubble {
+            color: #0056b3; /* Un azul limpio que transmite tecnología/agua */
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            background-color: #e6f0fa;
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            align-self: center; /* Lo mantiene centrado en celular */
         }
 
         .price-label {
@@ -118,33 +162,35 @@
 
         .price {
             color: #da291c;
-            font-size: 5rem;
+            font-size: 4rem; /* Un poco más pequeño para que no rompa la pantalla en celular */
             font-weight: 900;
-            margin: -10px 0 20px 0;
+            margin: 0 0 20px 0;
             line-height: 1;
         }
 
-        /* Sección de Regalo */
+        /* Sección de Regalo (Optimizada) */
         .gift-section {
             display: flex;
             align-items: center;
-            background-color: #f9f9f9;
+            background-color: #fff9f9; /* Fondo muy suave rojizo */
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 12px;
+            border: 1px solid #ffeaea;
             border-left: 5px solid #da291c;
-            margin-top: 20px;
+            text-align: left; /* Volvemos a alinear a la izquierda para el regalo */
         }
 
         .gift-img {
-            width: 80px;
+            width: 70px;
             height: auto;
             margin-right: 15px;
+            border-radius: 5px;
         }
 
         .gift-text h4 {
             color: #da291c;
             margin: 0 0 5px 0;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
         }
 
@@ -152,51 +198,42 @@
             margin: 0;
             font-size: 0.85rem;
             font-weight: bold;
-            color: #333;
+            color: #444;
+            line-height: 1.3;
         }
 
-        /* Columna Derecha: Imagen del Producto */
-        .image-col {
-            flex: 1;
-            min-width: 300px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .product-img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Etiqueta de Capacidad (44 LB) */
-        .capacity-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #da291c;
-            color: white;
-            padding: 15px 10px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            text-align: center;
-            line-height: 1;
-        }
-
-        /* Responsividad para móviles */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
+        /* --- ADAPTACIÓN PARA PANTALLAS GRANDES (COMPUTADORAS) --- */
+        @media (min-width: 768px) {
+            body {
+                padding: 40px 20px;
             }
-            .logo-container {
+            .promo-card {
+                padding: 40px;
+            }
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
                 text-align: left;
             }
+            .logo-container {
+                text-align: right;
+            }
             .main-content {
-                flex-direction: column-reverse;
+                flex-direction: row-reverse; /* Pone la imagen a la derecha en PC */
+                align-items: center;
+            }
+            .info-col {
+                flex: 1;
+                text-align: left; /* Alineación original en PC */
+            }
+            .ecobubble {
+                align-self: flex-start; /* Alineado a la izquierda en PC */
+            }
+            .image-col {
+                flex: 1;
+            }
+            .price {
+                font-size: 5rem;
             }
         }
     </style>
@@ -219,6 +256,13 @@
 
         <div class="main-content">
             
+            <div class="image-col">
+                <img src="https://via.placeholder.com/400x450?text=Lavadora+12kg" alt="Lavadora Samsung" class="product-img">
+                <div class="capacity-badge">
+                    12<br>KG
+                </div>
+            </div>
+
             <div class="info-col">
                 <h1 class="brand">SAMSUNG</h1>
                 <div class="sku">SKU 12770/13044/13058</div>
@@ -226,6 +270,8 @@
                     LAVADORA<br>
                     WF20T6000AW BLC
                 </div>
+                
+                <div class="ecobubble">✨ Sistema EcoBubble™</div>
                 
                 <p class="price-label">MOLICUOTA DESDE:</p>
                 <div class="price">L227</div>
@@ -236,13 +282,6 @@
                         <h4>¡REGALO!</h4>
                         <p>MICRO ECOTECH + SOPORTE D/LAVADORA<br>AL CRÉDITO</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="image-col">
-                <img src="https://via.placeholder.com/350x400?text=Lavadora+Samsung" alt="Lavadora Samsung" class="product-img">
-                <div class="capacity-badge">
-                    44<br>LB
                 </div>
             </div>
 
