@@ -3,165 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samsung - Línea Blanca Premium</title>
+    <title>Promoción Lavadora - Molineros</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "SamsungOne", "Segoe UI", Roboto, sans-serif;
-        }
-
+        /* Estilos Generales */
         body {
-            background-color: #f4f4f4;
-            color: #000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8; /* Fondo claro general */
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
         }
 
-        /* Header */
-        header {
-            background: #fff;
-            padding: 20px 8%;
+        /* Contenedor Principal (Tarjeta Blanca) */
+        .promo-card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Cabecera */
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
         }
 
-        .logo {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
+        .promo-title {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-transform: uppercase;
         }
 
-        /* Main Layout */
-        .container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+        .promo-title .ribbon {
+            background-color: #da291c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            transform: rotate(-2deg);
         }
 
-        /* Card de Producto */
-        .product-card {
-            background: #fff;
-            border-radius: 24px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        .promo-title .rojo { color: #da291c; }
+        .promo-title .amarillo { color: #f2a900; font-size: 2.5rem;}
+
+        .logo-container {
+            text-align: right;
         }
 
-        .product-card:hover {
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            transform: translateY(-5px);
+        .logo-container h2 {
+            color: #da291c;
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
         }
 
-        .product-card img {
-            width: 100%;
-            max-width: 280px;
-            height: auto;
-            margin-bottom: 30px;
+        .logo-container p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
         }
 
-        .model-code {
-            font-size: 11px;
-            color: #888;
+        /* Contenido Principal a dos columnas */
+        .main-content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Columna Izquierda: Información */
+        .info-col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .brand {
+            font-size: 2rem;
             font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
+            letter-spacing: 3px;
+            margin: 0 0 5px 0;
         }
 
-        .product-title {
-            font-size: 18px;
-            font-weight: 700;
+        .sku {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
             margin-bottom: 20px;
-            min-height: 50px;
         }
 
-        /* Especificaciones */
-        .specs-box {
-            text-align: left;
-            background: #f8f9fa;
+        .price-label {
+            color: #da291c;
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .price {
+            color: #da291c;
+            font-size: 5rem;
+            font-weight: 900;
+            margin: -10px 0 20px 0;
+            line-height: 1;
+        }
+
+        /* Sección de Regalo */
+        .gift-section {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
             padding: 15px;
-            border-radius: 12px;
+            border-radius: 10px;
+            border-left: 5px solid #da291c;
             margin-top: 20px;
         }
 
-        .spec-item {
-            font-size: 13px;
-            margin-bottom: 8px;
+        .gift-img {
+            width: 80px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .gift-text h4 {
+            color: #da291c;
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .gift-text p {
+            margin: 0;
+            font-size: 0.85rem;
+            font-weight: bold;
             color: #333;
+        }
+
+        /* Columna Derecha: Imagen del Producto */
+        .image-col {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
         }
 
-        .spec-label {
-            color: #777;
+        .product-img {
+            max-width: 100%;
+            height: auto;
         }
 
-        .spec-value {
-            font-weight: 600;
+        /* Etiqueta de Capacidad (44 LB) */
+        .capacity-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #da291c;
+            color: white;
+            padding: 15px 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 1;
         }
 
+        /* Responsividad para móviles */
         @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            .logo-container {
+                text-align: left;
+            }
+            .main-content {
+                flex-direction: column-reverse;
             }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">SAMSUNG</div>
-    <div style="font-size: 14px; font-weight: 600; color: #555;">Lavandería</div>
-</header>
-
-<div class="container">
-    
-    <div class="product-card">
-        <span class="model-code">MODELO: WW80-PURE-WHITE</span>
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/latin/ww80ta046ax-bo/gallery/latin-washer-ww5000t-ww80ta046ax-bo-424074219?$650_519_PNG$" alt="Samsung 8kg Blanca">
-        <h2 class="product-title">Lavadora Frontal 8Kg Slim White Edition</h2>
-        <div class="specs-box">
-            <div class="spec-item">
-                <span class="spec-label">Capacidad:</span>
-                <span class="spec-value">8 Kilogramos</span>
+    <div class="promo-card">
+        
+        <div class="header">
+            <div class="promo-title">
+                <div class="ribbon">Este agosto</div><br>
+                Lo <span class="rojo">decidís</span><br>
+                <span class="amarillo">vos</span>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">Tecnología:</span>
-                <span class="spec-value">Hygiene Steam</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Dimensiones:</span>
-                <span class="spec-value">600 x 850 x 450 mm</span>
+            <div class="logo-container">
+                <h2>MOLINEROS</h2>
+                <p>El amigo de su Hogar</p>
             </div>
         </div>
-    </div>
 
-    <div class="product-card">
-        <span class="model-code">MODELO: WD12-GIANT-WHT</span>
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/latin/wd12t754dbn-bo/gallery/latin-combo-wd7000t-395152-wd12t754dbn-bo-532938814?$650_519_PNG$" alt="Samsung 12kg Blanca">
-        <h2 class="product-title">Lavadora 12Kg Inteligente con AI Control</h2>
-        <div class="specs-box">
-            <div class="spec-item">
-                <span class="spec-label">Capacidad:</span>
-                <span class="spec-value">12 Kilogramos</span>
+        <div class="main-content">
+            
+            <div class="info-col">
+                <h1 class="brand">SAMSUNG</h1>
+                <div class="sku">SKU 12770/13044/13058</div>
+                <div class="product-name">
+                    LAVADORA<br>
+                    WF20T6000AW BLC
+                </div>
+                
+                <p class="price-label">MOLICUOTA DESDE:</p>
+                <div class="price">L227</div>
+
+                <div class="gift-section">
+                    <img src="https://via.placeholder.com/100x80?text=Microondas" alt="Regalo" class="gift-img">
+                    <div class="gift-text">
+                        <h4>¡REGALO!</h4>
+                        <p>MICRO ECOTECH + SOPORTE D/LAVADORA<br>AL CRÉDITO</p>
+                    </div>
+                </div>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">Motor:</span>
-                <span class="spec-value">Digital Inverter Pro</span>
+
+            <div class="image-col">
+                <img src="https://via.placeholder.com/350x400?text=Lavadora+Samsung" alt="Lavadora Samsung" class="product-img">
+                <div class="capacity-badge">
+                    44<br>LB
+                </div>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">Conexión:</span>
-                <span class="spec-value">Wi-Fi / SmartThings</span>
-            </div>
+
         </div>
-    </div>
 
-</div>
+    </div>
 
 </body>
 </html>
