@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samsung - Línea Blanca Premium</title>
+    <title>Samsung - Línea Blanca Personalizada</title>
     <style>
         * {
             margin: 0;
@@ -13,101 +14,141 @@
         }
 
         body {
-            background-color: #f4f4f4;
+            background-color: #f7f7f7;
             color: #000;
         }
 
-        /* Header */
+        /* Header Estilo Samsung */
         header {
             background: #fff;
-            padding: 20px 8%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
             letter-spacing: 1.5px;
         }
 
-        /* Main Layout */
-        .container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        /* Card de Producto */
-        .product-card {
-            background: #fff;
-            border-radius: 24px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
-
-        .product-card:hover {
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            transform: translateY(-5px);
-        }
-
-        .product-card img {
-            width: 100%;
-            max-width: 280px;
-            height: auto;
-            margin-bottom: 30px;
-        }
-
-        .model-code {
-            font-size: 11px;
-            color: #888;
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .product-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            min-height: 50px;
-        }
-
-        /* Especificaciones */
-        .specs-box {
-            text-align: left;
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
-
-        .spec-item {
+        nav a {
+            text-decoration: none;
+            color: #000;
+            margin: 0 12px;
             font-size: 13px;
-            margin-bottom: 8px;
-            color: #333;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .spec-label {
-            color: #777;
-        }
-
-        .spec-value {
             font-weight: 600;
         }
 
+        /* Layout */
+        .main-content {
+            display: flex;
+            padding: 30px 5%;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        /* Grid de Productos */
+        .grid {
+            flex: 1;
+            display: grid;
+            /* Responsive: mínimo 320px de ancho por tarjeta en PC/Tablet */
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .product-card:hover {
+            border-color: #ddd;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        /* Contenedor de las 2 imágenes */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 300px; /* Hace que las imágenes sean mucho más grandes */
+            object-fit: contain;
+            background: #f9f9f9; /* Fondo suave para que la imagen destaque */
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .model-number {
+            font-size: 12px;
+            color: #777;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            height: 40px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .specs-list {
+            text-align: left;
+            font-size: 14px;
+            color: #444;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .specs-list li {
+            list-style: none;
+            margin-bottom: 8px;
+        }
+
+        .specs-list li span {
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Responsive para celulares (Máximo 768px de ancho) */
         @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
+            .main-content {
+                padding: 15px 5%;
+            }
+            .grid {
+                /* Fuerza a mostrar 1 sola tarjeta por fila en celulares */
+                grid-template-columns: 1fr; 
+                gap: 20px;
+            }
+            .image-gallery img {
+                height: 250px; /* Ajuste ideal para pantallas móviles */
+            }
+            .product-card {
+                padding: 15px;
             }
         }
     </style>
@@ -115,52 +156,168 @@
 <body>
 
 <header>
-    <div class="logo">SAMSUNG</div>
-    <div style="font-size: 14px; font-weight: 600; color: #555;">Lavandería</div>
+    <div class="logo">REFRIGERADORES</div>
 </header>
 
-<div class="container">
-    
-    <div class="product-card">
-        <span class="model-code">MODELO: WW80-PURE-WHITE</span>
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/latin/ww80ta046ax-bo/gallery/latin-washer-ww5000t-ww80ta046ax-bo-424074219?$650_519_PNG$" alt="Samsung 8kg Blanca">
-        <h2 class="product-title">Lavadora Frontal 8Kg Slim White Edition</h2>
-        <div class="specs-box">
-            <div class="spec-item">
-                <span class="spec-label">Capacidad:</span>
-                <span class="spec-value">8 Kilogramos</span>
+<div class="main-content">
+    <main class="grid">
+        
+        <!-- Producto 1 -->
+        <div class="product-card">
+            <div class="image-gallery">
+                <img src="img1.jpeg" alt="Meling 87">
+                <img src="img2.jpeg" alt="Meling 87">
             </div>
-            <div class="spec-item">
-                <span class="spec-label">Tecnología:</span>
-                <span class="spec-value">Hygiene Steam</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Dimensiones:</span>
-                <span class="spec-value">600 x 850 x 450 mm</span>
-            </div>
+            <p class="product-name">REFRIGERADOR MELING 87</p>
+            <ul class="specs-list">
+                <li><span>Capacidad:</span> 87 LITROS </li>
+                <li><span>Compresor:</span> R-600-A-GAS REFRIGERANTE</li>
+                <li><span>Sistema:</span> Semi Seco</li>
+                <li><span>Acabado:</span> Acero Inox </li>
+            </ul>
         </div>
-    </div>
 
-    <div class="product-card">
-        <span class="model-code">MODELO: WD12-GIANT-WHT</span>
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/latin/wd12t754dbn-bo/gallery/latin-combo-wd7000t-395152-wd12t754dbn-bo-532938814?$650_519_PNG$" alt="Samsung 12kg Blanca">
-        <h2 class="product-title">Lavadora 12Kg Inteligente con AI Control</h2>
-        <div class="specs-box">
-            <div class="spec-item">
-                <span class="spec-label">Capacidad:</span>
-                <span class="spec-value">12 Kilogramos</span>
+        <!-- Producto 2 -->
+        <div class="product-card">
+            <div class="image-gallery">
+                <img src="img3.jpeg" alt="Meling 120">
+                <img src="img4.jpeg" alt="Meling 120">
             </div>
-            <div class="spec-item">
-                <span class="spec-label">Motor:</span>
-                <span class="spec-value">Digital Inverter Pro</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Conexión:</span>
-                <span class="spec-value">Wi-Fi / SmartThings</span>
-            </div>
+            <p class="product-name">REFRIGERADOR MELING 120 </p>
+            <ul class="specs-list">
+                <li><span>Capacidad:</span> 120 LITROS </li>
+                <li><span>Compresor:</span> R-600-A-GAS REFRIGERANTE</li>
+                <li><span>Sistema:</span> Semi Seco</li>
+                <li><span>Acabado:</span> Acero Inox </li>
+            </ul>
         </div>
-    </div>
 
+        <!-- Producto 3 -->
+        <div class="product-card">
+            <div class="image-gallery">
+                <img src="img5.jpeg" alt="Meling 213">
+                <img src="img6.jpeg" alt="Meling 213">
+            </div>
+            <p class="product-name">REFRIGERADOR MELING 213</p>
+            <ul class="specs-list">
+                <li><span>Capacidad:</span> 213 LITROS </li>
+                <li><span>Compresor:</span> R-600-A-GAS REFRIGERANTE</li>
+                <li><span>Sistema:</span> Semi Seco</li>
+                <li><span>Acabado:</span> Acero Inox </li>
+            </ul>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product-card">
+            <div class="image-gallery">
+                <img src="img7.jpeg" alt="Meling 220">
+                <img src="img8.jpeg" alt="Meling 220">
+            </div>
+            <p class="product-name">REFRIGERADOR MELING 220</p>
+            <ul class="specs-list">
+                <li><span>Capacidad:</span> 220 LITROS </li>
+                <li><span>Compresor:</span> R-600-A-GAS REFRIGERANTE</li>
+                <li><span>Sistema:</span> Semi Seco</li>
+                <li><span>Acabado:</span> Acero Inox </li>
+                <li><span>Extras:</span> Dispensador de Agua </li>
+            </ul>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="product-card">
+            <div class="image-gallery">
+                <img src="img9.jpeg" alt="Meling 275">
+                <img src="img10.jpeg" alt="Meling 275">
+            </div>
+            <p class="product-name">REFRIGERADOR MELING 275</p>
+            <ul class="specs-list">
+                <li><span>Capacidad:</span> 275 LITROS </li>
+                <li><span>Compresor:</span> R-600-A-GAS REFRIGERANTE</li>
+                <li><span>Sistema:</span> Semi Seco</li>
+                <li><span>Acabado:</span> Acero Inox </li>
+                <li><span>Extras:</span> Dispensador de Agua </li>
+            </ul>
+        </div>
+
+        <!-- Producto 6 -->
+        <div class="product-card">
+            <div class="image-gallery">
+                <img src="img11.jpeg" alt="Master G 150">
+                <img src="img12.jpeg" alt="Master G 150">
+            </div>
+            <p class="product-name">REFRIGERADOR Master G 150</p>
+            <ul class="specs-list">
+                <li><span>Capacidad:</span> 150 LITROS </li>
+                <li><span>Compresor:</span> R-600-A-GAS REFRIGERANTE</li>
+                <li><span>Sistema:</span> Semi Seco</li>
+                <li><span>Acabado:</span> Acero Inox </li>
+                <li><span>Enfriamiento:</span> Radiador Externo </li>
+            </ul>
+        </div>
+
+        <!-- Producto 7 -->
+        <div class="product-card">
+            <div class="image-gallery">
+                <img src="img13.jpeg" alt="Master G 190">
+                <img src="img14.jpeg" alt="Master G 190">
+            </div>
+            <p class="product-name">REFRIGERADOR Master G 190</p>
+            <ul class="specs-list">
+                <li><span>Capacidad:</span> 190 LITROS </li>
+                <li><span>Compresor:</span> R-600-A-GAS REFRIGERANTE</li>
+                <li><span>Sistema:</span> Semi Seco</li>
+                <li><span>Acabado:</span> Acero Inox </li>
+                <li><span>Enfriamiento:</span> Radiador Externo </li>
+            </ul>
+        </div>
+
+        <!-- Producto 8 -->
+        <div class="product-card">
+            <div class="image-gallery">
+                <img src="img15.jpeg" alt="Master G 230">
+                <img src="img16.jpeg" alt="Master G 230">
+            </div>
+            <p class="product-name">REFRIGERADOR Master G 230</p>
+            <ul class="specs-list">
+                <li><span>Capacidad:</span> 230 LITROS </li>
+                <li><span>Compresor:</span> R-600-A-GAS REFRIGERANTE</li>
+                <li><span>Sistema:</span> Semi Seco</li>
+                <li><span>Acabado:</span> Acero Inox </li>
+                <li><span>Extras:</span> Dispensador de Agua </li>
+            </ul>
+        </div>
+
+        <!-- Producto 9 -->
+        <div class="product-card">
+            <div class="image-gallery">
+                <img src="img17.jpeg" alt="Master G 290">
+                <img src="img18.jpeg" alt="Master G 290">
+            </div>
+            <p class="product-name">REFRIGERADOR Master G 290</p>
+            <ul class="specs-list">
+                <li><span>Capacidad:</span> 290 LITROS </li>
+                <li><span>Compresor:</span> R-600-A-GAS REFRIGERANTE</li>
+                <li><span>Sistema:</span> Semi Seco</li>
+                <li><span>Acabado:</span> Acero Inox </li>
+            </ul>
+        </div>
+
+        <!-- Producto 10 -->
+        <div class="product-card">
+            <div class="image-gallery">
+                <img src="img19.jpeg" alt="Master G 295">
+                <img src="img20.jpeg" alt="Master G 295">
+            </div>
+            <p class="product-name">REFRIGERADOR Master G 295</p>
+            <ul class="specs-list">
+                <li><span>Capacidad:</span> 295 LITROS </li>
+                <li><span>Compresor:</span> R-600-A-GAS REFRIGERANTE</li>
+                <li><span>Sistema:</span> Frio Seco</li>
+                <li><span>Acabado:</span> Acero Inox </li>
+            </ul>
+        </div>
+
+    </main>
 </div>
 
 </body>
