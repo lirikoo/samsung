@@ -4,11 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Samsung - Línea Blanca Personalizada</title>
+=======
+    <title>Catálogo MAVIK - Refrigerador</title>
+>>>>>>> f009b204d1062d6d7694a0f0557731ed895df991
     <style>
-        * {
+        /* Estilos Base */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f4f8;
             margin: 0;
             padding: 0;
+<<<<<<< HEAD
             box-sizing: border-box;
             font-family: "SamsungOne", "Segoe UI", Roboto, sans-serif;
         }
@@ -149,12 +157,146 @@
             }
             .product-card {
                 padding: 15px;
+=======
+            color: #333;
+        }
+
+        /* Cabecera MAVIK */
+        .header-mavik {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        
+        .header-mavik h1 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .header-mavik span {
+            color: #3498db;
+            font-weight: 900;
+        }
+
+        /* Contenedor del Producto */
+        .product-container {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column; /* Celular por defecto */
+            gap: 20px;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        /* Zona de la Imagen */
+        .product-image {
+            text-align: center;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        /* Detalles del Producto */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-brand {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        
+        .product-title {
+            font-size: 1.5rem;
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            line-height: 1.2;
+        }
+
+        /* Lista de Características */
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .features-list li {
+            background-color: #f8fcfd;
+            border: 1px solid #e1f0f6;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #444;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .features-list li:last-child {
+            margin-bottom: 0; /* Quita el margen al último elemento para que quede al ras */
+        }
+        
+        .features-list li strong {
+            color: #2980b9;
+            margin-bottom: 3px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        /* Adaptación para PC */
+        @media (min-width: 768px) {
+            .product-container {
+                flex-direction: row;
+                padding: 30px;
+                gap: 40px;
+            }
+            .product-image {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .product-details {
+                flex: 1.2;
+                justify-content: center; /* Centra el contenido verticalmente si la imagen es muy alta */
+            }
+            .features-list li {
+                flex-direction: row;
+                align-items: center;
+            }
+            .features-list li strong {
+                margin-bottom: 0;
+                margin-right: 10px;
+                min-width: 120px;
+>>>>>>> f009b204d1062d6d7694a0f0557731ed895df991
             }
         }
     </style>
 </head>
 <body>
 
+<<<<<<< HEAD
 <header>
     <div class="logo">REFRIGERADORES</div>
 </header>
@@ -319,6 +461,33 @@
 
     </main>
 </div>
+=======
+    <header class="header-mavik">
+        <h1>Electrodomésticos <span>MAVIK</span></h1>
+    </header>
+
+    <main class="product-container">
+        
+        <div class="product-image">
+            <img src="img1" alt="Refrigerador Acero Inoxidable">
+        </div>
+
+        <div class="product-details">
+            <span class="product-brand">Refrigeración</span>
+            <h2 class="product-title">Refrigerador Acero Inoxidable</h2>
+
+            <ul class="features-list">
+                <li><strong>Capacidad</strong> 275 litros</li>
+                <li><strong>Sistema</strong> Semi seco</li>
+                <li><strong>Refrigeración</strong> Radiador interno</li>
+                <li><strong>Compresor</strong> Motor gas ecológico R600a</li>
+                <li><strong>Extras</strong> Dispensador de agua (2 litros)</li>
+                <li><strong>Acabado</strong> Acero inoxidable</li>
+            </ul>
+        </div>
+
+    </main>
+>>>>>>> f009b204d1062d6d7694a0f0557731ed895df991
 
 </body>
 </html>
