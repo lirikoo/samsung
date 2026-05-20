@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -64,11 +65,12 @@
         .product-card {
             background: #fff;
             border-radius: 15px;
-            padding: 25px;
+            padding-bottom: 25px; /* Quitamos padding horizontal y superior para que la imagen toque el borde */
             text-align: center;
-            border: 1px solid transparent;
+            border: 1px solid #eaeaea;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            overflow: hidden; /* Mantiene las imágenes dentro del borde redondeado */
         }
 
         .product-card:hover {
@@ -80,17 +82,16 @@
         .image-gallery {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 0px; /* Separación cero entre fotos */
             margin-bottom: 20px;
         }
 
         .image-gallery img {
             width: 100%;
-            height: 300px; /* Hace que las imágenes sean mucho más grandes */
-            object-fit: contain;
-            background: #f9f9f9; /* Fondo suave para que la imagen destaque */
-            border-radius: 10px;
-            padding: 10px;
+            height: 300px; 
+            object-fit: cover; /* Llena todo el espacio sin deformarse */
+            background: none; 
+            padding: 0px; /* Quitamos bordes/padding interno */
         }
 
         .model-number {
@@ -111,6 +112,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0 20px; /* Añadimos padding al texto para que no toque el borde */
         }
 
         .specs-list {
@@ -121,6 +123,7 @@
             padding: 15px;
             border-radius: 8px;
             border: 1px solid #eee;
+            margin: 0 20px; /* Margen para que la lista no toque el borde de la tarjeta */
         }
 
         .specs-list li {
@@ -144,20 +147,19 @@
                 gap: 20px;
             }
             
-            /* AQUI ESTÁ EL CAMBIO PARA LAS IMÁGENES EN CELULAR */
+            /* RESTAURAMOS EL DISEÑO LADO A LADO PARA IMÁGENES MÁS AMPLIAS */
             .image-gallery {
-                grid-template-columns: 1fr; /* Pone una imagen debajo de la otra */
-                gap: 15px; /* Separación entre las dos fotos */
+                grid-template-columns: 1fr 1fr; /* Una imagen al lado de la otra */
+                gap: 0px;
             }
             
             .image-gallery img {
-                height: 320px; /* Aumentamos la altura para que luzcan más */
+                height: 250px; /* Ajustamos altura para móvil */
                 width: 100%;
             }
-            /* FIN DEL CAMBIO */
 
             .product-card {
-                padding: 15px;
+                padding-bottom: 20px;
             }
         }
     </style>
@@ -218,7 +220,7 @@
                 <img src="220-1.jpeg" alt="Meling 220">
                 <img src="220-2.jpeg" alt="Meling 220">
             </div>
-            <p class="prod-ct-name">REFRIGERADOR MELING 220</p>
+            <p class="product-name">REFRIGERADOR MELING 220</p>
             <ul class="specs-list">
                 <li><span>Capacidad:</span> 220 LITROS </li>
                 <li><span>Compresor:</span> R-600-A-GAS REFRIGERANTE</li>
@@ -304,8 +306,8 @@
 
         <div class="product-card">
             <div class="image-gallery">
-                <img src="295-1.jpeg" alt="Master G 295">
-                <img src="295-2.jpeg" alt="Master G 295">
+                <img src="150-1.jpeg" alt="Master G 295">
+                <img src="150-2.jpeg" alt="Master G 295">
             </div>
             <p class="product-name">REFRIGERADOR Master G 295</p>
             <ul class="specs-list">
@@ -321,3 +323,4 @@
 
 </body>
 </html>
+
